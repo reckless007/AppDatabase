@@ -1,0 +1,29 @@
+<section id="add" class="container">
+    <div class="form-wrap">
+      <h1>Add A Book</h1>
+    
+      {{#each errors}}
+        <div class="error">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+
+      <form action="/gigs/add" method="POST">
+        <div class="input-group">
+          <label for="Title">Add Title</label>
+          <input type="text" name="Title" id="Title" class="input-box" placeholder="eg. Name of the book"
+            maxlength="100" value={{ Title }}>
+        </div>
+        <div class="input-group">
+          <label for="Subject">Subject</label>
+          <input type="text" name="Subject" id="Subject" class="input-box" placeholder="eg. javascript, react, PHP"
+          maxlength="100" value={{ Subject }}>
+        </div>
+        <div class="input-group">
+          <label for="budget">Budget (Leave blank for unknown)</label>
+          <input type="number" name="Budget" id="Budget" class="input-box" placeholder="eg. 500, 5000, 10000" value={{ Budget }}
+        </div>
+        <input type="submit" value="Add" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>
